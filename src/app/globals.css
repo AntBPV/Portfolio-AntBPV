@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+@theme {
+  --color-back-primary: hsl(345 48% 16%);
+  --color-back-secondary: hsl(197, 61%, 15%);
+  --color-primary: hsl(348, 41%, 50%);
+  --color-secondary: hsl(189, 73%, 43%);
+  --color-txt: hsl(353 53% 90%);
+}
