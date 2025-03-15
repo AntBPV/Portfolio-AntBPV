@@ -6,4 +6,7 @@
   --color-primary: hsl(348, 41%, 50%);
   --color-secondary: hsl(189, 73%, 43%);
   --color-txt: hsl(353 53% 90%);
+
+  --drop-shadow-text: 0 2px 2px hsl(345, 50%, 10%);
+  --shadow-figure: 0 3px 3px hsl(197, 60%, 20%);
 }
