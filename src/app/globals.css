@@ -1,12 +1,17 @@
+/* Url imports */
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+/* End of url imports */
+
 @import "tailwindcss";
 
 @theme {
-  --color-back-primary: hsl(345 48% 16%);
-  --color-back-secondary: hsl(197, 61%, 15%);
-  --color-primary: hsl(348, 41%, 50%);
-  --color-secondary: hsl(189, 73%, 43%);
-  --color-txt: hsl(353 53% 90%);
+  --color-cold-primary: hsl(179, 100%, 42%);
+  --color-cold-secondary: hsl(168, 100%, 68%);
+  --color-neutral: hsl(0, 3%, 14%);
+  --color-warm-primary: hsl(349, 84%, 38%);
+  --color-warm-secondary: hsl(305, 89%, 11%);
 
-  --drop-shadow-text: 0 2px 2px hsl(345, 50%, 10%);
-  --shadow-figure: 0 3px 3px hsl(197, 60%, 20%);
+  --font-title: "Jost", sans-serif;
+  --font-subtitle: "Nunito", sans-serif;
+  --font-text: "Verdana", sans-serif;
 }
