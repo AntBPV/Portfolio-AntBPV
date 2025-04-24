@@ -1,12 +1,6 @@
 import React from "react";
 
-interface IconProps {
-  color?: string;
-  size?: number;
-  className?: string;
-}
-
-export default function ThemeIconHover({ color, size, className }: IconProps) {
+export default function ThemeIconHover() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

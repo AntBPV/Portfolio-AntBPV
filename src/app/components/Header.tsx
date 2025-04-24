@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import MenuItem from "./MenuItem";
 
