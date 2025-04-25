@@ -49,7 +49,7 @@ export default function MenuItem({
         </section>
         <span
           className={`absolute top-1/2 left-[100%] -translate-y-1/2 ml-2
-            px-3 py-1 text-lg bg-menu text-body rounded-tag
+            px-3 py-1 text-xl bg-menu text-body rounded-tag
             whitespace-nowrap transition-opacity duration-200
             ${isHovered ? "opacity-100" : "opacity-0 pointer-events-none"}
             ${highLightLabel && isHovered ? "text-accent" : ""}

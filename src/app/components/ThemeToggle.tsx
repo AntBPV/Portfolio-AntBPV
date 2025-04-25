@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import MenuItem from "./MenuItem";
-import ThemeIcon from "./icons/ThemeIcon";
-import ThemeIconHover from "./icons/ThemeIconHover";
+import { ThemeIcon, ThemeIconHover } from "./icons";
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);

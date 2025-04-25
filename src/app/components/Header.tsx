@@ -1,95 +1,142 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import MenuItem from "./MenuItem";
-
-// Icon imports
-import HomeIcon from "./icons/HomeIcon";
-import HomeIconHover from "./icons/HomeIconHover";
-import CodeIcon from "./icons/CodeIcon";
-import CodeIconHover from "./icons/CodeIconHover";
-import GuitarIcon from "./icons/GuitarIcon";
-import GuitarIconHover from "./icons/GuitarIconHover";
-import AboutIcon from "./icons/AboutIcon";
-import AboutIconHover from "./icons/AboutIconHover";
-import ResumeIcon from "./icons/ResumeIcon";
-import ResumeIconHover from "./icons/ResumeIconHover";
-import LinkedinIcon from "./icons/LinkedinIcon";
-import LinkedinIconHover from "./icons/LinkedinIconHover";
-import ContactIcon from "./icons/ContactIcon";
-import ContactIconHover from "./icons/ContactIconHover";
+import MobileMenuItem from "./MobileMenuItem";
+import { menuItems, separators } from "./consts";
 
 export default function Header() {
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
+
+  const MobileMenuContent = (
+    <nav className="font-subtitle font-bold flex flex-col py-2">
+      {menuItems.map((item, index) => (
+        <div key={`menu-item-${index}`}>
+          <MobileMenuItem
+            href={item.href}
+            defaultIcon={item.defaultIcon}
+            label={item.label}
+          />
+          {separators.includes(index) && (
+            <div className="separator-height w-full rounded-full bg-separator my-4"></div>
+          )}
+        </div>
+      ))}
+    </nav>
+  );
+
+  const MenuContent = (
+    <nav className="font-subtitle font-bold flex flex-col items-center py-2">
+      {menuItems.map((item, index) => (
+        <div key={`menu-item-${index}`}>
+          <MenuItem
+            href={item.href}
+            defaultIcon={item.defaultIcon}
+            hoverIcon={item.hoverIcon}
+            label={item.label}
+            highLightLabel={item.highLightLabel}
+            colorfulHover={item.colorfulHover}
+          />
+          {separators.includes(index) && (
+            <div className="separator-height w-full rounded-full bg-separator my-4"></div>
+          )}
+        </div>
+      ))}
+    </nav>
+  );
+
+  useEffect(() => {
+    if (isMobile) {
+      setIsMenuOpen(false);
+    }
+  }, [isMobile]);
+
   return (
     <main className="flex min-h-screen">
-      <header className="fixed flex flex-col left-0 top-1/2 -translate-y-1/2 mx-4 items-center">
-        <section className="bg-menu rounded-custom p-2">
-          <nav className="font-subtitle font-bold flex flex-col items-center">
-            <MenuItem
-              href="/"
-              defaultIcon={HomeIcon}
-              hoverIcon={HomeIconHover}
-              label="Home"
-              highLightLabel={false}
-              colorfulHover={false}
-            />
-            <div className="separator-height w-3/4 rounded-full bg-separator my-4"></div>
-            <MenuItem
-              href="/"
-              defaultIcon={CodeIcon}
-              hoverIcon={CodeIconHover}
-              label="Code Projects"
-              highLightLabel={true}
-              colorfulHover={true}
-            />
-            <MenuItem
-              href="/"
-              defaultIcon={GuitarIcon}
-              hoverIcon={GuitarIconHover}
-              label="Personal Projects"
-              highLightLabel={true}
-              colorfulHover={true}
-            />
-            <div className="separator-height w-3/4 rounded-full bg-separator my-4"></div>
-            <MenuItem
-              href="/"
-              defaultIcon={AboutIcon}
-              hoverIcon={AboutIconHover}
-              label="About Me"
-              highLightLabel={true}
-              colorfulHover={true}
-            />
-            <MenuItem
-              href="/"
-              defaultIcon={ResumeIcon}
-              hoverIcon={ResumeIconHover}
-              label="Resume"
-              highLightLabel={true}
-              colorfulHover={true}
-            />
-            <MenuItem
-              href="/"
-              defaultIcon={LinkedinIcon}
-              hoverIcon={LinkedinIconHover}
-              label="Linkedin"
-              highLightLabel={true}
-              colorfulHover={true}
-            />
-            <div className="separator-height w-3/4 rounded-full bg-separator my-4"></div>
-            <MenuItem
-              href="/"
-              defaultIcon={ContactIcon}
-              hoverIcon={ContactIconHover}
-              label="Contact Me"
-              highLightLabel={false}
-              colorfulHover={false}
-            />
-          </nav>
-        </section>
-        <section className="mt-3">
-          <ThemeToggle />
-        </section>
-      </header>
+      {!isMobile && (
+        <header className="fixed flex flex-col left-0 top-1/2 -translate-y-1/2 mx-4 items-center">
+          <section className="bg-menu rounded-custom p-2">
+            {MenuContent}
+          </section>
+          <section className="mt-3">
+            <ThemeToggle />
+          </section>
+        </header>
+      )}
+
+      {isMobile && (
+        <>
+          <button
+            className="fixed top-0 right-0  m-0 z-50 p-2 bg-menu rounded-burgir"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="menu-item-absolute h-[37px] w-[37px]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="menu-item-absolute h-[37px] w-[37px]"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            )}
+          </button>
+          <div
+            className={`fixed inset-0 bg-menu transition-opacity duration-200 ease-in-out z-40
+              ${
+                isMenuOpen
+                  ? "opacity-100 pointer-events-auto"
+                  : "opacity-0 pointer-events-none"
+              }`}
+          >
+            <section className="pt-16 px-4 h-full flex flex-col justify-around">
+              <span className="bg-menu rounded-custom p-2 flex-grow">
+                {MobileMenuContent}
+              </span>
+              <span className="fixed bottom-4 right-4">
+                <ThemeToggle />
+              </span>
+            </section>
+          </div>
+        </>
+      )}
     </main>
   );
 }
