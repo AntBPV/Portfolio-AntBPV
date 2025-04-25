@@ -14,6 +14,7 @@ import {
   ContactIcon,
   ContactIconHover,
 } from "../icons";
+
 export interface MenuItemData {
   href: string;
   defaultIcon: React.ComponentType<{
