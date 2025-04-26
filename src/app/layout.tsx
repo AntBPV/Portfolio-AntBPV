@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "Portfolio Antonio Parra",
   description: "Antonio Professional Portfolio",
 };
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export default function RootLayout({
   children,

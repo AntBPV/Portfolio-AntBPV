@@ -56,19 +56,19 @@ export default function Hero() {
         </span>
       )}
       {isMobile && (
-        <span className="flex flex-col w-full h-screen m-8">
-          <section className="flex flex-col my-20 justify-center items-center">
+        <span className="flex flex-col w-full min-h-screen px-4 py-8">
+          <section className="flex flex-col my-10 justify-center items-center text-center">
             <h1 className="text-title-mobile text-body font-semibold">
               Anthony Parra
             </h1>
-            <h2 className="text-hero-subtitle-mobile text-body w-full break-words text-center">
+            <h2 className="text-hero-subtitle-mobile text-body w-full break-words ">
               Anthony <span className="text-primary">“AntBPV”</span> Parra is a
               software developer based in Colombia with a strong passion for
               building powerful tools that help others.
             </h2>
           </section>
-          <section className="flex flex-col justify-around items-center max-h-screen ">
-            <div className="relative w-[400px] h-[390px] mx-auto">
+          <section className="flex flex-col justify-around items-center">
+            <div className="relative w-[300px] h-[290px] mx-auto">
               <span className="absolute inset-0 bg-photo opacity-75"></span>
               {mounted && (
                 <Image
@@ -78,7 +78,7 @@ export default function Hero() {
                       : "/images/Profile-Photo-Light.png"
                   }
                   alt="Profile Photo"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw"
                   fill
                   priority
                   className="object-contain"
