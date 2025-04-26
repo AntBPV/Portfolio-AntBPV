@@ -4,28 +4,13 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { LocationIcon } from "./icons";
+import useIsMobile from "./hooks/useIsMobile";
 
 export default function Hero() {
   const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile, mounted } = useIsMobile();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-    };
-  }, []);
+  if (!mounted) return null;
 
   return (
     <main className="flex w-full font-title">

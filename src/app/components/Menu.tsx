@@ -4,25 +4,13 @@ import { useState, useEffect } from "react";
 import ThemeToggle from "./ThemeToggle";
 import MenuItem from "./MenuItem";
 import MobileMenuItem from "./MobileMenuItem";
+import useIsMobile from "./hooks/useIsMobile";
 import { menuItems, separators } from "./consts";
 import { MenuIcon, CloseIcon } from "./icons";
 
 export default function Menu() {
-  const [isMobile, setIsMobile] = useState(false);
+  const { isMobile } = useIsMobile();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-    };
-
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-    };
-  }, []);
 
   const MobileMenuContent = (
     <nav className="font-subtitle font-bold flex flex-col py-2">
