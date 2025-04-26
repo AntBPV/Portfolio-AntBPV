@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { LocationIcon } from "./icons";
 import useIsMobile from "./hooks/useIsMobile";
 
