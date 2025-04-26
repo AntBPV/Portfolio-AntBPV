@@ -53,10 +53,16 @@
   .bg-separator {
     background-color: var(--color-foreground-detail);
   }
+  .bg-photo {
+    background-color: var(--color-foreground);
+  }
 
   /* ------------- Texts ------------- */
   .text-body {
     color: var(--color-text);
+  }
+  .text-primary {
+    color: var(--color-primary);
   }
   .text-accent {
     color: var(--color-accent-primary);
@@ -73,6 +79,9 @@
   .menu-item-primary:hover {
     color: var(--color-accent-primary);
   }
+  .icon-accent {
+    color: var(--color-accent-primary);
+  }
 
   /* Utilities for Values */
   .rounded-custom {
@@ -87,5 +96,26 @@
   }
   .separator-height {
     height: 2px;
+  }
+
+  .text-title {
+    font-size: 128px;
+    line-height: 158px;
+  }
+  .text-title-mobile {
+    font-size: 54px;
+    line-height: 78px;
+  }
+  .text-hero-subtitle {
+    font-size: 40px;
+    line-height: 58px;
+  }
+  .text-hero-subtitle-mobile {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .border-photo {
+    border: 5px solid var(--color-text);
   }
 }

@@ -5,8 +5,9 @@ import ThemeToggle from "./ThemeToggle";
 import MenuItem from "./MenuItem";
 import MobileMenuItem from "./MobileMenuItem";
 import { menuItems, separators } from "./consts";
+import { MenuIcon, CloseIcon } from "./icons";
 
-export default function Header() {
+export default function Menu() {
   const [isMobile, setIsMobile] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -67,7 +68,7 @@ export default function Header() {
   }, [isMobile]);
 
   return (
-    <main className="flex min-h-screen">
+    <main className="absolute flex h-screen">
       {!isMobile && (
         <header className="fixed flex flex-col left-0 top-1/2 -translate-y-1/2 mx-4 items-center">
           <section className="bg-menu rounded-custom p-2">
@@ -86,37 +87,7 @@ export default function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
           >
-            {isMenuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="menu-item-absolute h-[37px] w-[37px]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="menu-item-absolute h-[37px] w-[37px]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
-            )}
+            {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </button>
           <div
             className={`fixed inset-0 bg-menu transition-opacity duration-200 ease-in-out z-40
