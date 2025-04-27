@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import { LocationIcon } from "./icons";
+import { LocationIcon, ArrowIcon } from "./icons";
 import useIsMobile from "./hooks/useIsMobile";
 
 export default function Hero() {
@@ -14,19 +14,36 @@ export default function Hero() {
   return (
     <main className="flex w-full font-title">
       {!isMobile && (
-        <span className="flex flex-row w-full h-screen pl-35 p-8">
-          <section className="flex flex-col mt-10 mr-10">
-            <h1 className="text-title text-body font-semibold inline-block">
+        <div className="flex flex-row w-full h-screen pl-35 p-8">
+          <section className="flex flex-col py-10 pr-10">
+            <h1 className="text-title text-body font-medium inline-block">
               Anthony Parra
             </h1>
-            <h2 className="text-hero-subtitle text-body w-full break-words">
+            <h2 className="text-subtitle  text-body w-full break-words">
               Anthony <span className="text-primary">“AntBPV”</span> Parra is a
               software developer based in Colombia with a strong passion for
               building powerful tools that help others.
             </h2>
-            <div className="text-right">
-              <h1 className="text-8xl text-body font-semibold">Testing</h1>
-            </div>
+            <section className="relative mt-auto ml-auto">
+              <span className="relative h-[200px] w-[200px]">
+                <ArrowIcon
+                  color="currentColor"
+                  size={200}
+                  className="absolute -top-15 -left-35 icon-secondary"
+                />
+              </span>
+              <span className="relative h-[200px] w-[200px]">
+                <ArrowIcon
+                  color="currentColor"
+                  size={200}
+                  className="absolute -top-5 -left-25 icon-primary"
+                />
+              </span>
+              <h1 className="text-follower font-medium text-body relative text-right">
+                Projects <br />
+                This way
+              </h1>
+            </section>
           </section>
 
           <section className="flex flex-col justify-center items-start max-h-screen ">
@@ -50,18 +67,18 @@ export default function Hero() {
             </div>
             <div className="flex flex-row mt-2 justify-between items-center gap-2">
               <LocationIcon size={37} />
-              <h1 className="text-body text-hero-subtitle">Colombia, Pasto</h1>
+              <h1 className="text-body text-subtitle">Colombia, Pasto</h1>
             </div>
           </section>
-        </span>
+        </div>
       )}
       {isMobile && (
-        <span className="flex flex-col w-full min-h-screen px-4 py-8">
+        <div className="flex flex-col w-full max-h-screen h-full px-4 py-8">
           <section className="flex flex-col my-10 justify-center items-center text-center">
             <h1 className="text-title-mobile text-body font-semibold">
               Anthony Parra
             </h1>
-            <h2 className="text-hero-subtitle-mobile text-body w-full break-words ">
+            <h2 className="text-subtitle-mobile text-body w-full break-words ">
               Anthony <span className="text-primary">“AntBPV”</span> Parra is a
               software developer based in Colombia with a strong passion for
               building powerful tools that help others.
@@ -88,12 +105,32 @@ export default function Hero() {
             </div>
             <div className="flex flex-row mt-2 justify-around items-center gap-2">
               <LocationIcon size={25} />
-              <h1 className="text-body text-hero-subtitle-mobile">
+              <h1 className="text-body text-subtitle-mobile">
                 Colombia, Pasto
               </h1>
             </div>
           </section>
-        </span>
+          <section className="relative mt-20 items-end justify-center ml-auto mr-4 mb-5 min-h-[150px]">
+            <span className="absolute -top-10 -left-30 ">
+              <ArrowIcon
+                color="currentColor"
+                size={150}
+                className="icon-secondary"
+              />
+            </span>
+            <span className="absolute -top-0 -left-20">
+              <ArrowIcon
+                color="currentColor"
+                size={150}
+                className=" icon-primary"
+              />
+            </span>
+            <h1 className="text-follower-mobile font-medium text-body relative text-right">
+              Projects <br />
+              This way
+            </h1>
+          </section>
+        </div>
       )}
     </main>
   );

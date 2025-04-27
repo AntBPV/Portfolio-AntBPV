@@ -79,6 +79,12 @@
   .menu-item-primary:hover {
     color: var(--color-accent-primary);
   }
+  .icon-primary {
+    color: var(--color-primary);
+  }
+  .icon-secondary {
+    color: var(--color-secondary);
+  }
   .icon-accent {
     color: var(--color-accent-primary);
   }
@@ -106,13 +112,21 @@
     font-size: 54px;
     line-height: 78px;
   }
-  .text-hero-subtitle {
+  .text-subtitle {
     font-size: 40px;
     line-height: 58px;
   }
-  .text-hero-subtitle-mobile {
+  .text-subtitle-mobile {
     font-size: 28px;
     line-height: 40px;
+  }
+  .text-follower {
+    font-size: 96px;
+    line-height: 100px;
+  }
+  .text-follower-mobile {
+    font-size: 64px;
+    line-height: 78px;
   }
 
   .border-photo {

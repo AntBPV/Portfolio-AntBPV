@@ -17,3 +17,4 @@ export { default as ThemeIconHover } from "./ThemeIconHover";
 export { default as LocationIcon } from "./LocationIcon";
 export { default as MenuIcon } from "./MenuIcon";
 export { default as CloseIcon } from "./CloseIcon";
+export { default as ArrowIcon } from "./ArrowIcon";
