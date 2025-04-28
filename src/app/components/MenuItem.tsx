@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 interface MenuItemProps {
   href?: string;
@@ -30,8 +31,8 @@ export default function MenuItem({
   const [isHovered, setIsHovered] = useState(false);
   return (
     <main className="relative w-full flex justify-center px-2">
-      <a
-        href={href}
+      <Link
+        href={href || "#"}
         className={`${
           colorfulHover ? "menu-item-primary" : "menu-item-absolute"
         } 
@@ -57,7 +58,7 @@ export default function MenuItem({
         >
           {label}
         </span>
-      </a>
+      </Link>
     </main>
   );
 }

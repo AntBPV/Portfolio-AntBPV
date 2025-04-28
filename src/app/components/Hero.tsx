@@ -110,7 +110,7 @@ export default function Hero() {
               </h1>
             </div>
           </section>
-          <section className="relative mt-20 items-end justify-center ml-auto mr-4 mb-5 min-h-[150px]">
+          <section className="relative mt-40 items-end justify-center ml-auto mr-4 mb-5 min-h-[150px]">
             <span className="absolute -top-10 -left-30 ">
               <ArrowIcon
                 color="currentColor"

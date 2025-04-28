@@ -42,10 +42,10 @@ export const menuItems: MenuItemData[] = [
     colorfulHover: false,
   },
   {
-    href: "/",
+    href: "#code",
     defaultIcon: CodeIcon,
     hoverIcon: CodeIconHover,
-    label: "Code Projects",
+    label: "Software Projects",
     highLightLabel: true,
     colorfulHover: true,
   },

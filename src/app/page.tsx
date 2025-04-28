@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <BackgroundPattern menuWidth={170} className="bg-menu" />
-      <main className="z-10 relative flex h-screen w-screen items-center justify-center">
+      <main className="z-10 relative flex flex-col h-screen w-screen items-center justify-center">
         <Menu />
         <Hero />
       </main>
