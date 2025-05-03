@@ -15,6 +15,10 @@
     --color-accent-primary: hsl(349, 84%, 38%);
     --color-accent-secondary: hsl(349, 94%, 56%);
 
+    --color-head: hsl(0, 2%, 44%);
+    --color-card: hsl(0, 0%, 95%);
+    --color-tag: hsl(0, 0%, 85%);
+
     --font-jost: "Jost", sans-serif;
     --font-nunito: "Nunito", sans-serif;
     --font-verdana: Verdana, Geneva, Tahoma, sans-serif;
@@ -28,6 +32,10 @@
     --color-secondary: hsl(349, 94%, 56%);
     --color-accent-primary: hsl(179, 100%, 42%);
     --color-accent-secondary: hsl(168, 100%, 68%);
+
+    --color-head: hsl(0, 2%, 24%);
+    --color-card: hsl(0, 2%, 44%);
+    --color-tag: hsl(0, 2%, 34%);
   }
 }
 @layer utilities {
@@ -44,92 +52,128 @@
 
   /* Utilities for Colors */
   /* ------------- Backgrounds -------------*/
-  .bg-page {
+  .background {
     background-color: var(--color-background);
   }
-  .bg-menu {
+  .bg-foreground {
     background-color: var(--color-foreground);
   }
-  .bg-separator {
+  .bg-foreground-detail {
     background-color: var(--color-foreground-detail);
   }
-  .bg-photo {
-    background-color: var(--color-foreground);
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+  .bg-accent {
+    background-color: var(--color-accent-primary);
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+  .bg-head {
+    background-color: var(--color-head);
+  }
+  .bg-card {
+    background-color: var(--color-card);
+  }
+  .bg-tag {
+    background-color: var(--color-tag);
   }
 
   /* ------------- Texts ------------- */
-  .text-body {
+  .color-body {
     color: var(--color-text);
   }
-  .text-primary {
+  .color-primary {
     color: var(--color-primary);
   }
-  .text-accent {
+  .color-accent {
     color: var(--color-accent-primary);
+  }
+  .color-secondary {
+    color: var(--color-secondary);
   }
 
   /* ------------- Items -------------*/
-  .menu-item-absolute {
-    color: var(--color-text);
-  }
-  .menu-item-primary {
+  .menu-color-primary {
     color: var(--color-text);
     transition: color 200ms ease;
   }
-  .menu-item-primary:hover {
-    color: var(--color-accent-primary);
-  }
-  .icon-primary {
-    color: var(--color-primary);
-  }
-  .icon-secondary {
-    color: var(--color-secondary);
-  }
-  .icon-accent {
+  .menu-color-primary:hover {
     color: var(--color-accent-primary);
   }
 
   /* Utilities for Values */
+  /*--------------Border Radius ---------------*/
   .rounded-custom {
     border-radius: 10px;
   }
-  .rounded-tag {
+  .rounded-menu {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
   .rounded-burgir {
     border-bottom-left-radius: 10px;
   }
-  .separator-height {
-    height: 2px;
+  .rounded-tag {
+    border-radius: 20px;
   }
 
-  .text-title {
+  /*--------------Font Sizes ---------------*/
+  .title-txtSize {
     font-size: 128px;
     line-height: 158px;
   }
-  .text-title-mobile {
+  .title-txtSize-m {
     font-size: 54px;
     line-height: 78px;
   }
-  .text-subtitle {
+  .subtitle-txtSize {
     font-size: 40px;
     line-height: 58px;
   }
-  .text-subtitle-mobile {
+  .subtitle-txtSize-m {
     font-size: 28px;
     line-height: 40px;
   }
-  .text-follower {
+  .follower-txtSize {
     font-size: 96px;
     line-height: 100px;
   }
-  .text-follower-mobile {
+  .follower-txtSize-m {
     font-size: 64px;
     line-height: 78px;
   }
+  .card-title-txtSize {
+    font-size: 64px;
+    line-height: 92px;
+  }
+  .card-title-txtSize-m {
+    font-size: 40px;
+    line-height: 58px;
+  }
+  .card-txtSize {
+    font-size: 20px;
+    line-height: 24px;
+  }
 
-  .border-photo {
+  .text-card-head {
+    color: hsl(0, 0%, 95%);
+    font-weight: lighter;
+    font-size: 36px;
+    line-height: 52px;
+  }
+  .text-card-head-m {
+    color: hsl(0, 0%, 95%);
+    font-weight: lighter;
+    font-size: 32px;
+    line-height: 46px;
+  }
+  /*-------------Other Values ---------------*/
+  .separator-height {
+    height: 2px;
+  }
+  .border-thick-photo {
     border: 5px solid var(--color-text);
   }
 }

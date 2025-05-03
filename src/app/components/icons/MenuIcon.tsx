@@ -4,7 +4,7 @@ export default function MenuIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="menu-item-absolute h-[37px] w-[37px]"
+      className="color-body h-[37px] w-[37px]"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"

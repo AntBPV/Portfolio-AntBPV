@@ -32,7 +32,7 @@ export interface MenuItemData {
   colorfulHover?: boolean;
 }
 
-export const menuItems: MenuItemData[] = [
+export const menuConsts: MenuItemData[] = [
   {
     href: "/",
     defaultIcon: HomeIcon,

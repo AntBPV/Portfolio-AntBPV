@@ -19,7 +19,7 @@ export default function ThemeToggle() {
     <button
       aria-label="Toggle Dark Mode"
       type="button"
-      className="px-2 py-1 font-subtitle font-bold rounded-custom bg-menu cursor-pointer"
+      className="px-2 py-1 font-subtitle font-bold rounded-custom bg-foreground cursor-pointer"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "dark" ? (

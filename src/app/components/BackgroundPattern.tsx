@@ -83,7 +83,7 @@ export default function BackgroundPattern({
 
   return (
     <main
-      className={`fixed inset-0 z-0 overflow-hidden pointer-events-none bg-page`}
+      className={`fixed inset-0 z-0 overflow-hidden pointer-events-none background`}
     >
       <svg
         width={dimensions.width}

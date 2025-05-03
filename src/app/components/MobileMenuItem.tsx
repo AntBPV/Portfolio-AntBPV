@@ -19,11 +19,11 @@ export default function MobileMenuItem({
     <main className="relative w-full flex justify-center px-2">
       <a
         href={href}
-        className="menu-item-absolute py-3 w-full flex flex-row items-center justify-between"
+        className="color-body py-3 w-full flex flex-row items-center justify-between"
         aria-label={label}
       >
         <DefaultIcon color="currentColor" size={37} />
-        <span className="ml-4 text-xl text-body">{label}</span>
+        <span className="ml-4 text-xl color-body">{label}</span>
       </a>
     </main>
   );

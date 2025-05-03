@@ -1,2 +1,2 @@
-export { menuItems } from "./menuItems";
+export { menuConsts } from "./menuConsts";
 export { separators } from "./separators";
