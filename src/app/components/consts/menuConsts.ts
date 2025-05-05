@@ -30,6 +30,8 @@ export interface MenuItemData {
   label: string;
   highLightLabel: boolean;
   colorfulHover?: boolean;
+  download?: boolean;
+  external?: boolean;
 }
 
 export const menuConsts: MenuItemData[] = [
@@ -66,20 +68,22 @@ export const menuConsts: MenuItemData[] = [
     colorfulHover: true,
   },
   {
-    href: "/",
+    href: "/docs/Resume.pdf",
     defaultIcon: ResumeIcon,
     hoverIcon: ResumeIconHover,
     label: "Resume",
     highLightLabel: true,
     colorfulHover: true,
+    download: true,
   },
   {
-    href: "/",
+    href: "https://www.linkedin.com/in/antonio-benjamin-parra-velasquez-242801353/",
     defaultIcon: LinkedinIcon,
     hoverIcon: LinkedinIconHover,
     label: "Linkedin",
     highLightLabel: true,
     colorfulHover: true,
+    external: true,
   },
   {
     href: "/",

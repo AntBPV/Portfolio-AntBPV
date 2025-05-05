@@ -3,6 +3,7 @@
 import Menu from "./components/Menu";
 import BackgroundPattern from "./components/BackgroundPattern";
 import Hero from "./components/Hero";
+import Projects from "./components/Projects";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="z-10 relative flex flex-col min-h-screen w-screen items-center justify-center">
         <Menu />
         <Hero />
+        <Projects />
       </main>
     </>
   );

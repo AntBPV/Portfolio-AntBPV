@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import MenuItem from "./MenuItem";
+import MenuButton from "./MenuButton";
 import { ThemeIcon, ThemeIconHover } from "./icons";
 
 export default function ThemeToggle() {
@@ -20,10 +20,13 @@ export default function ThemeToggle() {
       aria-label="Toggle Dark Mode"
       type="button"
       className="px-2 py-1 font-subtitle font-bold rounded-custom bg-foreground cursor-pointer"
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      onClick={(e) => {
+        e.preventDefault();
+        setTheme(theme === "dark" ? "light" : "dark");
+      }}
     >
       {theme === "dark" ? (
-        <MenuItem
+        <MenuButton
           defaultIcon={ThemeIcon}
           hoverIcon={ThemeIconHover}
           label="Light Mode"
@@ -31,7 +34,7 @@ export default function ThemeToggle() {
           colorfulHover={false}
         />
       ) : (
-        <MenuItem
+        <MenuButton
           defaultIcon={ThemeIcon}
           hoverIcon={ThemeIconHover}
           label="Dark Mode"

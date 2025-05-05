@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import useIsMobile from "./hooks/useIsMobile";
+import { LinkIcon } from "./icons";
 
 export interface ProjectCardProps {
   category: string;
@@ -8,6 +9,7 @@ export interface ProjectCardProps {
   description: string;
   tags: string[];
   imageSrc: string;
+  href: string;
 }
 
 export default function MobileProjectCard({
@@ -16,6 +18,7 @@ export default function MobileProjectCard({
   description,
   tags,
   imageSrc,
+  href,
 }: ProjectCardProps) {
   const displayTags = tags.slice(0, 3);
   const tagColors = [
@@ -34,12 +37,12 @@ export default function MobileProjectCard({
 
       <section className="flex flex-col">
         <div className="p-4">
-          <span className="flex items-center mb-3">
-            <h2 className="card-title-txtSize-m color-body font-title mr-2">
+          <Link href={href} className="flex items-center mb-3">
+            <h2 className="card-title-txtSize-m color-body font-title mr-2 underline">
               {title}
             </h2>
-            <Link href="#" className="w-5 h-5" />
-          </span>
+            <LinkIcon size={35} />
+          </Link>
 
           <p className="card-txtSize color-body font-text mb-4">
             {description}
@@ -70,7 +73,7 @@ export default function MobileProjectCard({
                   src={imageSrc}
                   alt={title}
                   fill
-                  className="object-cover"
+                  className="object-cover rounded-custom"
                 />
               </div>
             )}
