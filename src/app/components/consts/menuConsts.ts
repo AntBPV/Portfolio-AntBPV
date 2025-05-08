@@ -60,7 +60,7 @@ export const menuConsts: MenuItemData[] = [
     colorfulHover: true,
   },
   {
-    href: "/",
+    href: "#about",
     defaultIcon: AboutIcon,
     hoverIcon: AboutIconHover,
     label: "About Me",

@@ -33,7 +33,10 @@ export default function Projects() {
   );
 
   return (
-    <main className="flex flex-col items-center justify-center m-5" id="code">
+    <main
+      className="flex flex-col items-center justify-center m-5 py-10"
+      id="code"
+    >
       {projectCards}
     </main>
   );

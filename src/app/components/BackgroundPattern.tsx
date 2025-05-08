@@ -90,7 +90,7 @@ export default function BackgroundPattern({
         height={dimensions.height}
         viewBox={`0 0 ${dimensions.width} ${dimensions.height}`}
         preserveAspectRatio="none"
-        className={`w-full h-full opacity-10 ${className}`}
+        className={`w-screen h-screen opacity-10 ${className}`}
       >
         <g transform={`translate(${leftPadding}, ${topPadding})`}>
           {generateXs()}

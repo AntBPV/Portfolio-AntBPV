@@ -12,27 +12,27 @@ export default function Hero() {
   if (!mounted) return null;
 
   return (
-    <main className="flex w-full font-title">
+    <main className="flex w-screen overflow-x-clip font-title">
       {!isMobile && (
-        <div className="flex flex-row w-full h-screen pl-35 p-8">
+        <div className="flex flex-row h-screen pl-35 p-8">
           <section className="flex flex-col py-10 pr-10">
             <h1 className="title-txtSize color-body font-medium inline-block">
               Anthony Parra
             </h1>
-            <h2 className="subtitle-txtSize color-body w-full break-words">
+            <h2 className="subtitle-txtSize color-body break-words">
               Anthony <span className="color-primary">“AntBPV”</span> Parra is a
               software developer based in Colombia with a strong passion for
               building powerful tools that help others.
             </h2>
             <section className="relative mt-auto ml-auto">
-              <span className="relative h-[200px] w-[200px]">
+              <span className="h-[200px] w-[200px]">
                 <ArrowIcon
                   color="currentColor"
                   size={200}
                   className="absolute -top-15 -left-35 color-secondary"
                 />
               </span>
-              <span className="relative h-[200px] w-[200px]">
+              <span className="h-[200px] w-[200px]">
                 <ArrowIcon
                   color="currentColor"
                   size={200}
@@ -46,8 +46,8 @@ export default function Hero() {
             </section>
           </section>
 
-          <section className="flex flex-col justify-center items-start max-h-screen ">
-            <div className="relative w-[651px] h-[622px] mx-auto">
+          <section className="flex flex-col justify-center items-start max-h-screen">
+            <div className="relative w-[651px] h-[622px] mx-auto overflow-hidden">
               <span className="absolute inset-0 bg-foreground opacity-75"></span>
               {mounted && (
                 <Image
@@ -57,7 +57,6 @@ export default function Hero() {
                       : "/images/Profile-Photo-Light.png"
                   }
                   alt="Profile Photo"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   fill
                   priority
                   className="object-contain"

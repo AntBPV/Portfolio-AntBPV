@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Portfolio Antonio Parra",
+  title: "Antonio Parra",
   description: "Antonio Professional Portfolio",
 };
 export const viewport = {

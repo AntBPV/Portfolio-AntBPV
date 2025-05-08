@@ -69,7 +69,7 @@ export default function ProjectCard({
 
         <div className="w-1/2 right-0 bottom-0 top-0 overflow-hidden pt-4 px-4">
           {mounted && (
-            <div className="w-full h-full relative rounded-t-lg flex justify-center items-center">
+            <div className="w-full h-full relative flex justify-center items-center">
               <Image
                 src={imageSrc}
                 alt={title}

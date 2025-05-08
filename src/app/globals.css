@@ -19,6 +19,8 @@
     --color-card: hsl(0, 0%, 95%);
     --color-tag: hsl(0, 0%, 85%);
 
+    --color-border: hsl(0, 2%, 44%);
+
     --font-jost: "Jost", sans-serif;
     --font-nunito: "Nunito", sans-serif;
     --font-verdana: Verdana, Geneva, Tahoma, sans-serif;
@@ -36,6 +38,13 @@
     --color-head: hsl(0, 2%, 24%);
     --color-card: hsl(0, 2%, 44%);
     --color-tag: hsl(0, 2%, 34%);
+
+    --color-border: hsl(0, 0%, 95%);
+  }
+  html,
+  body {
+    overflow-x: hidden;
+    scrollbar-width: none;
   }
 }
 @layer utilities {
@@ -54,44 +63,69 @@
   /* ------------- Backgrounds -------------*/
   .background {
     background-color: var(--color-background);
+    transition: all 300ms ease-out;
   }
   .bg-foreground {
     background-color: var(--color-foreground);
+    transition: all 300ms ease-out;
   }
   .bg-foreground-detail {
     background-color: var(--color-foreground-detail);
+    transition: all 300ms ease-out;
   }
   .bg-primary {
     background-color: var(--color-primary);
+    transition: all 300ms ease-out;
   }
   .bg-accent {
     background-color: var(--color-accent-primary);
+    transition: all 300ms ease-out;
   }
   .bg-secondary {
     background-color: var(--color-secondary);
+    transition: all 300ms ease-out;
+  }
+  .bg-accent-secondary {
+    background-color: var(--color-accent-secondary);
+    transition: all 300ms ease-out;
   }
   .bg-head {
     background-color: var(--color-head);
+    transition: all 300ms ease-out;
   }
   .bg-card {
     background-color: var(--color-card);
+    transition: all 300ms ease-out;
   }
   .bg-tag {
     background-color: var(--color-tag);
+    transition: all 300ms ease-out;
   }
 
   /* ------------- Texts ------------- */
   .color-body {
     color: var(--color-text);
+    transition: all 300ms ease-out;
   }
   .color-primary {
     color: var(--color-primary);
+    transition: all 200ms ease-out;
   }
   .color-accent {
     color: var(--color-accent-primary);
+    transition: all 200ms ease-out;
   }
   .color-secondary {
     color: var(--color-secondary);
+    transition: all 200ms ease-out;
+  }
+  .color-accent-secondary {
+    color: var(--color-accent-secondary);
+    transition: all 200ms ease-out;
+  }
+  .color-border {
+    color: var(--color-border);
+    transition: all 200ms ease-out;
   }
 
   /* ------------- Items -------------*/
@@ -155,6 +189,15 @@
   .card-txtSize {
     font-size: 20px;
     line-height: 24px;
+  }
+
+  .about-txtSize {
+    font-size: 48px;
+    line-height: 69px;
+  }
+  .about-txtSize-m {
+    font-size: 36px;
+    line-height: 58px;
   }
 
   .text-card-head {
