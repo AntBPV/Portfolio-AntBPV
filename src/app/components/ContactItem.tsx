@@ -1,4 +1,4 @@
-import { ElementType, MouseEvent } from "react";
+import { MouseEvent } from "react";
 
 interface ContactItemProps {
   icon: React.ComponentType<{
