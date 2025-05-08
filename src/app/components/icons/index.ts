@@ -19,3 +19,7 @@ export { default as MenuIcon } from "./MenuIcon";
 export { default as CloseIcon } from "./CloseIcon";
 export { default as ArrowIcon } from "./ArrowIcon";
 export { default as LinkIcon } from "./LinkIcon";
+export { default as GithubIcon } from "./GithubIcon";
+export { default as InstagramIcon } from "./InstagramIcon";
+export { default as NextIcon } from "./NextIcon";
+export { default as PreviousIcon } from "./PreviousIcon";

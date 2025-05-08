@@ -200,6 +200,23 @@
     line-height: 58px;
   }
 
+  .contact-title-txtSize {
+    font-size: 96px;
+    line-height: 92px;
+  }
+  .contact-title-txtSize-m {
+    font-size: 48px;
+    line-height: 69px;
+  }
+  .contact-txtSize {
+    font-size: 48px;
+    line-height: 96px;
+  }
+  .contact-txtSize-m {
+    font-size: 36px;
+    line-height: 52px;
+  }
+
   .text-card-head {
     color: hsl(0, 0%, 95%);
     font-weight: lighter;
@@ -218,5 +235,8 @@
   }
   .border-thick-photo {
     border: 5px solid var(--color-text);
+  }
+  .border-contact {
+    border: 3px dashed var(--color-text);
   }
 }

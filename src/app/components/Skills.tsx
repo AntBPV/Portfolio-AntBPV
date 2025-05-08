@@ -21,7 +21,7 @@ export default function Skills() {
           </h2>
           <p
             className={`font-title color-body ${
-              isMobile ? "card-txtSize" : "card-title-txtSize-m"
+              isMobile ? "card-txtSize font-semibold" : "card-title-txtSize-m"
             }`}
           >
             Things I do (kinda) well

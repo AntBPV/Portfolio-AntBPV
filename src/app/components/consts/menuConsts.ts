@@ -86,7 +86,7 @@ export const menuConsts: MenuItemData[] = [
     external: true,
   },
   {
-    href: "/",
+    href: "#contact",
     defaultIcon: ContactIcon,
     hoverIcon: ContactIconHover,
     label: "Contact Me",
