@@ -4,14 +4,239 @@
 
 @import "tailwindcss";
 
-@theme {
-  --color-cold-primary: hsl(179, 100%, 42%);
-  --color-cold-secondary: hsl(168, 100%, 68%);
-  --color-neutral: hsl(0, 3%, 14%);
-  --color-warm-primary: hsl(349, 84%, 38%);
-  --color-warm-secondary: hsl(305, 89%, 11%);
+@layer base {
+  :root {
+    --color-background: hsl(0, 0%, 100%);
+    --color-text: hsl(0, 3%, 14%);
+    --color-foreground: hsl(0, 0%, 95%);
+    --color-foreground-detail: hsl(0, 0%, 74%);
+    --color-primary: hsl(179, 100%, 42%);
+    --color-secondary: hsl(168, 100%, 68%);
+    --color-accent-primary: hsl(349, 84%, 38%);
+    --color-accent-secondary: hsl(349, 94%, 56%);
 
-  --font-title: "Jost", sans-serif;
-  --font-subtitle: "Nunito", sans-serif;
-  --font-text: "Verdana", sans-serif;
+    --color-head: hsl(0, 2%, 44%);
+    --color-card: hsl(0, 0%, 95%);
+    --color-tag: hsl(0, 0%, 85%);
+
+    --color-border: hsl(0, 2%, 44%);
+
+    --font-jost: "Jost", sans-serif;
+    --font-nunito: "Nunito", sans-serif;
+    --font-verdana: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .dark {
+    --color-background: hsl(0, 3%, 14%);
+    --color-text: hsl(0, 0%, 95%);
+    --color-foreground: hsl(0, 2%, 24%);
+    --color-foreground-detail: hsl(0, 3%, 14%);
+    --color-primary: hsl(349, 84%, 38%);
+    --color-secondary: hsl(349, 94%, 56%);
+    --color-accent-primary: hsl(179, 100%, 42%);
+    --color-accent-secondary: hsl(168, 100%, 68%);
+
+    --color-head: hsl(0, 2%, 24%);
+    --color-card: hsl(0, 2%, 44%);
+    --color-tag: hsl(0, 2%, 34%);
+
+    --color-border: hsl(0, 0%, 95%);
+  }
+  html,
+  body {
+    overflow-x: hidden;
+    scrollbar-width: none;
+  }
+}
+@layer utilities {
+  /* Utilites for Font families */
+  .font-title {
+    font-family: var(--font-jost);
+  }
+  .font-subtitle {
+    font-family: var(--font-nunito);
+  }
+  .font-text {
+    font-family: var(--font-verdana);
+  }
+
+  /* Utilities for Colors */
+  /* ------------- Backgrounds -------------*/
+  .background {
+    background-color: var(--color-background);
+    transition: all 300ms ease-out;
+  }
+  .bg-foreground {
+    background-color: var(--color-foreground);
+    transition: all 300ms ease-out;
+  }
+  .bg-foreground-detail {
+    background-color: var(--color-foreground-detail);
+    transition: all 300ms ease-out;
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
+    transition: all 300ms ease-out;
+  }
+  .bg-accent {
+    background-color: var(--color-accent-primary);
+    transition: all 300ms ease-out;
+  }
+  .bg-secondary {
+    background-color: var(--color-secondary);
+    transition: all 300ms ease-out;
+  }
+  .bg-accent-secondary {
+    background-color: var(--color-accent-secondary);
+    transition: all 300ms ease-out;
+  }
+  .bg-head {
+    background-color: var(--color-head);
+    transition: all 300ms ease-out;
+  }
+  .bg-card {
+    background-color: var(--color-card);
+    transition: all 300ms ease-out;
+  }
+  .bg-tag {
+    background-color: var(--color-tag);
+    transition: all 300ms ease-out;
+  }
+
+  /* ------------- Texts ------------- */
+  .color-body {
+    color: var(--color-text);
+    transition: all 300ms ease-out;
+  }
+  .color-primary {
+    color: var(--color-primary);
+    transition: all 200ms ease-out;
+  }
+  .color-accent {
+    color: var(--color-accent-primary);
+    transition: all 200ms ease-out;
+  }
+  .color-secondary {
+    color: var(--color-secondary);
+    transition: all 200ms ease-out;
+  }
+  .color-accent-secondary {
+    color: var(--color-accent-secondary);
+    transition: all 200ms ease-out;
+  }
+  .color-border {
+    color: var(--color-border);
+    transition: all 200ms ease-out;
+  }
+
+  /* ------------- Items -------------*/
+  .menu-color-primary {
+    color: var(--color-text);
+    transition: color 200ms ease;
+  }
+  .menu-color-primary:hover {
+    color: var(--color-accent-primary);
+  }
+
+  /* Utilities for Values */
+  /*--------------Border Radius ---------------*/
+  .rounded-custom {
+    border-radius: 10px;
+  }
+  .rounded-menu {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .rounded-burgir {
+    border-bottom-left-radius: 10px;
+  }
+  .rounded-tag {
+    border-radius: 20px;
+  }
+
+  /*--------------Font Sizes ---------------*/
+  .title-txtSize {
+    font-size: 128px;
+    line-height: 158px;
+  }
+  .title-txtSize-m {
+    font-size: 54px;
+    line-height: 78px;
+  }
+  .subtitle-txtSize {
+    font-size: 40px;
+    line-height: 58px;
+  }
+  .subtitle-txtSize-m {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  .follower-txtSize {
+    font-size: 96px;
+    line-height: 100px;
+  }
+  .follower-txtSize-m {
+    font-size: 64px;
+    line-height: 78px;
+  }
+  .card-title-txtSize {
+    font-size: 64px;
+    line-height: 92px;
+  }
+  .card-title-txtSize-m {
+    font-size: 40px;
+    line-height: 58px;
+  }
+  .card-txtSize {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .about-txtSize {
+    font-size: 48px;
+    line-height: 69px;
+  }
+  .about-txtSize-m {
+    font-size: 36px;
+    line-height: 58px;
+  }
+
+  .contact-title-txtSize {
+    font-size: 96px;
+    line-height: 92px;
+  }
+  .contact-title-txtSize-m {
+    font-size: 48px;
+    line-height: 69px;
+  }
+  .contact-txtSize {
+    font-size: 48px;
+    line-height: 96px;
+  }
+  .contact-txtSize-m {
+    font-size: 36px;
+    line-height: 52px;
+  }
+
+  .text-card-head {
+    color: hsl(0, 0%, 95%);
+    font-weight: lighter;
+    font-size: 36px;
+    line-height: 52px;
+  }
+  .text-card-head-m {
+    color: hsl(0, 0%, 95%);
+    font-weight: lighter;
+    font-size: 32px;
+    line-height: 46px;
+  }
+  /*-------------Other Values ---------------*/
+  .separator-height {
+    height: 2px;
+  }
+  .border-thick-photo {
+    border: 5px solid var(--color-text);
+  }
+  .border-contact {
+    border: 3px dashed var(--color-text);
+  }
 }
